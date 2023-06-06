@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import 'package:virt_mnc/main.dart';
+import 'package:virt_mnc/ui/widgets/home/home_app_bar.dart';
+import 'package:virt_mnc/ui/widgets/home/list_groups.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,13 +8,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink,
-        leading: IconButton(
-          onPressed: () => logger.i("Pressed profile picture button"),
-          icon: Icon(Icons.face),
+      appBar: HomeAppBar(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [const DrawerHeader(child: Text("this is my drawer"))],
         ),
       ),
+      body: ListGroups(),
     );
   }
 }
