@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virt_mnc/ui/widgets/home/group_tile.dart';
 
 class ListGroups extends StatefulWidget {
   const ListGroups({super.key});
@@ -11,12 +12,7 @@ class _ListGroupsState extends State<ListGroups> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
-        Container(
-          color: Colors.black,
-          height: 200,
-        )
-      ],
+      children: [GroupTile(name: "balls club")],
     );
   }
 }

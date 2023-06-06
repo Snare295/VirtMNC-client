@@ -8,14 +8,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HomeAppBar(),
+      appBar: const HomeAppBar(),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [const DrawerHeader(child: Text("this is my drawer"))],
         ),
       ),
-      body: ListGroups(),
+      body: const ListGroups(),
     );
   }
 }
