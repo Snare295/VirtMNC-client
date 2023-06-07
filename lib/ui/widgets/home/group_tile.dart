@@ -12,6 +12,10 @@ class GroupTile extends StatelessWidget {
   final String name;
   final ImageProvider<Object> groupImg;
 
+  static const double heightOfTile = 75;
+  static const double marginAround = 8;
+  static const double roundness = 6;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,10 +28,11 @@ class GroupTile extends StatelessWidget {
         );
       },
       child: Container(
-        height: 75,
-        margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
+        height: heightOfTile,
+        margin: const EdgeInsets.fromLTRB(
+            marginAround, marginAround, marginAround, 0),
         decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
+            borderRadius: const BorderRadius.all(Radius.circular(roundness)),
             color: Theme.of(context).secondaryHeaderColor),
         child: Row(
           children: [
