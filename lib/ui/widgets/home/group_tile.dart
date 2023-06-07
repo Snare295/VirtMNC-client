@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:virt_mnc/main.dart';
+import 'package:virt_mnc/ui/pages/message/group_message_page.dart';
 
 class GroupTile extends StatelessWidget {
   const GroupTile({
@@ -13,7 +15,14 @@ class GroupTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapUp: (details) {},
+      onTapUp: (details) {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const GroupPage();
+        }));
+        logger.v(
+          "⏭ Pushed to GroupPage of $name",
+        );
+      },
       child: Container(
         height: 75,
         margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
