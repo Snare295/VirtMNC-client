@@ -1,16 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:virt_mnc/app/group_data.dart';
 import 'package:virt_mnc/main.dart';
 import 'package:virt_mnc/ui/pages/message/group_message_page.dart';
 
 class GroupTile extends StatelessWidget {
   const GroupTile({
     super.key,
-    this.name = "The name of group isn't defined",
-    this.groupImg = const AssetImage("assets/images/group.png"),
+    required this.groupData,
   });
-  final String name;
-  final ImageProvider<Object> groupImg;
+  final GroupData groupData;
 
   static const double heightOfTile = 75;
   static const double marginAround = 8;
@@ -20,11 +19,14 @@ class GroupTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTapUp: (details) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const GroupPage();
-        }));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return GroupPage(groupData: groupData);
+          }),
+        );
         logger.v(
-          "⏭ Pushed to GroupPage of $name",
+          "⏭ Pushed to GroupPage of ${groupData.name}",
         );
       },
       child: Container(
@@ -37,7 +39,7 @@ class GroupTile extends StatelessWidget {
         child: Row(
           children: [
             Image(
-              image: groupImg,
+              image: groupData.image,
             ),
             const SizedBox(width: 10),
             Expanded(
@@ -49,11 +51,13 @@ class GroupTile extends StatelessWidget {
                   flex: 1,
                   child: SizedBox.expand(
                     child: AutoSizeText(
-                      name,
+                      groupData.name,
                       maxLines: 1,
                       overflow: TextOverflow.fade,
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
