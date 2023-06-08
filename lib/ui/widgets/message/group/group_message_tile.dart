@@ -4,6 +4,11 @@ import 'package:virt_mnc/app/sender_entity.dart';
 import 'package:virt_mnc/app/user_data.dart';
 
 class GroupMessageTile extends StatefulWidget {
+  final int? id;
+  final String messageStr;
+  final Sender sender;
+  final bool isMe;
+
   GroupMessageTile({
     super.key,
     this.id,
@@ -11,31 +16,32 @@ class GroupMessageTile extends StatefulWidget {
     required this.sender,
     required this.isMe,
   }) {
-    if (isMe == true) {
+    if (isMe) {
       if (sender.name != UserData().name) {
-        print(sender.name);
-        print(UserData().name);
         throw ArgumentError(
             "$this have constructed with isMe = $isMe, but $sender isn't user");
       }
     }
   }
 
-  int? id;
-  String messageStr;
-  Sender sender;
-  bool isMe;
-
   @override
   State<GroupMessageTile> createState() => _GroupMessageTileState();
 }
 
 class _GroupMessageTileState extends State<GroupMessageTile> {
+  late String messageStr = widget.messageStr;
+
+  stringUpdate(String newMessage) {
+    setState(() {
+      messageStr = newMessage;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey,
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: widget.isMe
           ? Row(
               mainAxisAlignment: MainAxisAlignment.end,
