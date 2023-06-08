@@ -67,11 +67,19 @@ class _GroupMessageTileState extends State<GroupMessageTile> {
   }
 
   Column texts(String name, String text) {
-    return Column(children: [
-      AutoSizeText(name, style: TextStyle(fontWeight: FontWeight.bold)),
-      AutoSizeText(
-        text,
-      ),
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AutoSizeText(
+          name,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        AutoSizeText(
+          text,
+        ),
+      ],
+    );
   }
 }
