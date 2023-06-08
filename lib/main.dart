@@ -3,14 +3,13 @@ import 'package:logger/logger.dart';
 import 'package:virt_mnc/ui/pages/home/home_page.dart';
 
 var logger = Logger(
-  printer: PrettyPrinter(
-      methodCount: 2,
-      errorMethodCount: 8,
-      lineLength: 80,
-      colors: true,
-      printEmojis: true,
-      printTime: true),
-);
+    printer: PrettyPrinter(
+  methodCount: 2,
+  errorMethodCount: 8,
+  lineLength: 40,
+  colors: true,
+  printEmojis: true,
+));
 
 void main() {
   runApp(const MyApp());
