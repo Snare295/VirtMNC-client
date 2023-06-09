@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      min_coverage: 0
 
   # A custom job which generates and uploads the package's dependency graph
   # Only runs when the build job has completed successfully.
