@@ -6,7 +6,7 @@ class ConnectionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       title: AutoSizeText("Connections"),
       leading: Icon(Icons.near_me_outlined),
     );
