@@ -39,6 +39,16 @@ class _GroupMessageListViewState extends State<GroupMessageListView> {
             },
           ),
         ),
+        Container(
+          margin: const EdgeInsets.all(12),
+          height: 60,
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "Send message",
+              hintStyle: TextStyle(color: Theme.of(context).hintColor),
+            ),
+          ),
+        ),
       ],
     );
   }
