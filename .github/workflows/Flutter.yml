@@ -3,7 +3,7 @@ name: VeryGoodWorkflow
 on: 
   push:
     branches:
-      - main
+      - '**'
 
 jobs:
   build:
