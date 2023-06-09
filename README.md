@@ -24,6 +24,9 @@ Welcome to the Messenger with idea of decentralised message system without any c
 Check out the [Releases](https://github.com/Snare295/VirtMNC-client/releases) section to find the latest stable version of the VirtMNC. 
 Each release includes release notes and a changelog to help you understand the changes and improvements made in each version.
 
+## Dependecies
+
+Check dependecy graph in [Github-actions artifacts](https://github.com/Snare295/VirtMNC-client/suites/13499244207/artifacts/741591819)
 
 ## Installation
 
