@@ -1,0 +1,10 @@
+# .github/workflows/my_flutter_package.yaml
+name: VeryGoodWorkflow
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
