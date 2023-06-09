@@ -8,14 +8,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:virt_mnc/app/group_data.dart';
-import 'package:virt_mnc/app/message_data.dart';
 import 'package:virt_mnc/app/sender_entity.dart';
-import 'package:virt_mnc/app/user_data.dart';
-
-import 'package:virt_mnc/main.dart';
-import 'package:virt_mnc/ui/widgets/home/group_tile.dart';
-import 'package:virt_mnc/ui/widgets/home/list_groups.dart';
 import 'package:virt_mnc/ui/widgets/message/group/group_message_tile.dart';
 
 void main() {
