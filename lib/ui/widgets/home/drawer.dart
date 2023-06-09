@@ -12,21 +12,19 @@ class HomeDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(0),
-        child: Container(
-          child: Column(
-            children: [
-              UserAccountsDrawerHeader(
-                accountName: AutoSizeText(UserData().name, minFontSize: 20),
-                accountEmail: SizedBox(),
-                currentAccountPicture: CircleAvatar(
-                    backgroundImage: UserData().userProfilePicture),
-              ),
-              UserSettingsTile(),
-              ConnectionTile(),
-              SettingsTile(),
-            ],
-          ),
+        padding: const EdgeInsets.all(0),
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: AutoSizeText(UserData().name, minFontSize: 20),
+              accountEmail: const SizedBox(),
+              currentAccountPicture:
+                  CircleAvatar(backgroundImage: UserData().userProfilePicture),
+            ),
+            const UserSettingsTile(),
+            const ConnectionTile(),
+            const SettingsTile(),
+          ],
         ),
       ),
     );

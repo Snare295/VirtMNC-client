@@ -6,7 +6,7 @@ class SettingsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       title: AutoSizeText("Settings of app"),
       leading: Icon(Icons.settings),
     );

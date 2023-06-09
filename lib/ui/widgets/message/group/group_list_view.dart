@@ -20,20 +20,26 @@ class _GroupMessageListViewState extends State<GroupMessageListView> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      reverse: true,
-      itemCount: messageList.length,
-      itemBuilder: (context, index) {
-        Message thisMessage = messageList[index];
-        bool isMe = false;
-        if (thisMessage.sendWho.name == UserData().name) {
-          isMe = true;
-        }
-        return GroupMessageTile(
-            messageStr: thisMessage.messageBody,
-            sender: thisMessage.sendWho,
-            isMe: isMe);
-      },
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            reverse: true,
+            itemCount: messageList.length,
+            itemBuilder: (context, index) {
+              Message thisMessage = messageList[index];
+              bool isMe = false;
+              if (thisMessage.sendWho.name == UserData().name) {
+                isMe = true;
+              }
+              return GroupMessageTile(
+                  messageStr: thisMessage.messageBody,
+                  sender: thisMessage.sendWho,
+                  isMe: isMe);
+            },
+          ),
+        ),
+      ],
     );
   }
 }

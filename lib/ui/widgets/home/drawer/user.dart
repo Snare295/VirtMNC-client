@@ -6,7 +6,7 @@ class UserSettingsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       title: AutoSizeText("User settings"),
       leading: Icon(Icons.manage_accounts),
     );

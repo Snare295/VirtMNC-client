@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      drawer: HomeDrawer(),
+      drawer: const HomeDrawer(),
       body: ListGroups(groupsOfUser: [
         GroupData(),
         GroupData(
